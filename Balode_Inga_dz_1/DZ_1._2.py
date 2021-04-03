@@ -14,43 +14,49 @@ for i in range(0, 1001):
 print(cubed_lst)
 
 sum = 0
-
+result = 0
 for a in cubed_lst:
-    a = int(a)
-    if a % 7 == 0:
-        while a > 0:
-            digit = a % 10
-            sum = sum + digit
-            a = a // 10
+    result = 0
+    i = a
+    while i > 0:
+        digit = i % 10
+        i = i // 10
+        result += digit
+    if result % 7 == 0:
+        sum += a
+
 print(sum)
 
-
-#если с новым списком
-
+#если с новым списком (сумма чисел с учетом прибавления 17)
 new_cubed_list = []
 
 for x in cubed_lst:
-    x = int(x) + 17
+    x += 17
     new_cubed_list.append(x)
 
-new_summ = 0
-for x in new_cubed_list:
-    x = int(x)
-    if x % 7 == 0:
-        while x > 0:
-            digit = x % 10
-            new_summ = new_summ + digit
-            x = x // 10
-
 print(new_cubed_list)
+
+new_summ = 0
+result = 0
+for x in new_cubed_list:
+    result = 0
+    i = x
+    while i > 0:
+        digit = i % 10
+        i = i // 10
+        result += digit
+    if result % 7 == 0:
+        new_summ += x
+
+
 print(new_summ)
 
 
-#не создавая список
-
+#не создавая список (сумма чисел с учетом прибавления 17)
 
 n = 0
 summ = 0
+result = 0
 while n < len(cubed_lst):
     cubed_lst[n] = int(cubed_lst[n]) + 17
     n +=1
@@ -59,14 +65,40 @@ while n < len(cubed_lst):
 # for id in range(len(cubed_lst)):
 #     cubed_lst[id] += 17
 
-for i in cubed_lst:
-    i = int(i)
-    if i % 7 == 0:
-         while i > 0:
-            new_digit = i % 10
-            summ = summ + new_digit
-            i = i // 10
+for a in cubed_lst:
+    result = 0
+    i = a
+    while i > 0:
+        digit = i % 10
+        i = i // 10
+        result += digit
+    if result % 7 == 0:
+        summ += a
 
 print(cubed_lst)
 print(summ)
+
+
+# сумма оригинальных чисел списка ( до прибавления 17)
+
+n = 0
+summ = 0
+result = 0
+
+
+for a in cubed_lst:
+    x = a
+    result = 0
+    i = a + 17
+    while i > 0:
+        digit = i % 10
+        i = i // 10
+        result += digit
+    if result % 7 == 0:
+        summ += x
+
+
+print(cubed_lst)
+print(summ)
+
 
