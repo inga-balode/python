@@ -7,15 +7,21 @@ class ComplexNumber:
         self.real = real
         self.imag = imag
 
+
     def __add__(self, other):
-        i = numpy.lib.scimath.sqrt(-1)
-        x = (self.real + self.imag * i) + (other.real + other.imag * i)
-        return x
+        return ComplexNumber(self.real + other.real, self.imag + other.imag)
+
 
     def __mul__(self, other):
-        i = numpy.lib.scimath.sqrt(-1)
-        x = (self.real + self.imag * i) * (other.real + other.imag * i)
-        return x
+        a = self.real
+        b = self.imag
+        c = other.real
+        d = other.imag
+        return ComplexNumber(a*c - b*d, b*c + a*d)
+
+
+    def __str__(self):
+        return f'{self.real} + {self.imag}i'
 
 
 complex_1 = ComplexNumber(1, 3)

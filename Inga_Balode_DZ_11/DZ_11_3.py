@@ -13,7 +13,7 @@ try:
         elif number == 'stop':
             print(result)
             break
-        elif number.isnumeric()==False and number != 'stop':
+        elif number.isnumeric()==False:
             raise InputError('Это не число!')
 except InputError as e:
         print(e.txt)

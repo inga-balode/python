@@ -3,6 +3,9 @@ class Date:
     def __init__(self, event):
         self.event = event
 
+#попробуй перд записью event проводить валидацию методом, который создала. Так будет более правильно
+# вот не очень это поняла, это ведь просто название ивента, а метод валидирует дату
+
     @staticmethod
     def get_date(value):
         day, month, year = value.split('-')
@@ -18,7 +21,10 @@ class Date:
         month = int(month)
         year = int(year)
         if 0 < day < 31 and 0 < month <= 12 and year>=1:
-            print(f'Дата: {day}-ое число {month} мес. {year} год')
+            if month ==2 and day > 28:
+                print('Дата некорректна')
+            else:
+                print(f'Дата: {day}-ое число {month} мес. {year} год')
         else:
             print('Дата некорректна')
 
